@@ -81,3 +81,32 @@
   display: block;
   margin: 0;
 }
+/* Couple Names Font Size */
+.couple-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.05;
+  font-size: clamp(38px, 6vw, 76px);
+  font-weight: 400;
+}
+
+.couple-names span {
+  display: block;
+}
+
+.couple-names i {
+  display: block;
+  font-size: 0.8em;
+  margin: 4px 0;
+  color: #83b4cf;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .couple-names {
+    font-size: clamp(32px, 9vw, 48px);
+    line-height: 1.08;
+  }
+}

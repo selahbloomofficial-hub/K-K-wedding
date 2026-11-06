@@ -219,3 +219,19 @@
     pointer-events: auto;
   }
 }
+/* Prevent the invisible opening screen from blocking RSVP */
+.welcome[hidden],
+.welcome.is-opening {
+  pointer-events: none !important;
+}
+
+/* Keep RSVP interactive */
+#rsvp,
+#rsvp form,
+#rsvp label,
+#rsvp input,
+#rsvp select,
+#rsvp textarea,
+#rsvp button {
+  pointer-events: auto !important;
+}

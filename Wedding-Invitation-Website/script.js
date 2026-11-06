@@ -25,4 +25,22 @@
   }
   updateCountdown();setInterval(updateCountdown,1000);
 })();
+#rsvp {
+  position: relative;
+  z-index: 20;
+  pointer-events: auto !important;
+}
 
+#rsvp form,
+#rsvp input,
+#rsvp select,
+#rsvp textarea,
+#rsvp button {
+  pointer-events: auto !important;
+}
+
+#rsvp input,
+#rsvp textarea {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}

@@ -145,35 +145,63 @@
 .opening-invite{top:56%;}
 @media(max-width:720px){.opening-invite{top:56%}}
 @media (max-width: 720px) {
+  .opening-invite {
+    top: 56%;
+  }
+
   .rsvp {
+    position: relative;
+    z-index: 21;
     scroll-margin-top: 14px;
     padding: 58px 18px calc(82px + env(safe-area-inset-bottom));
   }
 
   .rsvp form {
+    position: relative;
+    z-index: 21;
     width: 100%;
     max-width: 520px;
+    margin: 25px auto 0;
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
-    margin-top: 25px;
+    pointer-events: auto;
   }
 
   .rsvp label {
+    position: relative;
+    z-index: 22;
     min-width: 0;
     gap: 7px;
     font-size: 12px;
+    pointer-events: auto;
   }
 
   .rsvp input,
   .rsvp select,
   .rsvp textarea {
+    position: relative;
+    z-index: 23;
+    display: block;
+    width: 100%;
     min-width: 0;
     min-height: 50px;
     padding: 13px 14px;
-    font-size: 16px;
-    line-height: 1.4;
+    font: 16px/1.4 var(--sans);
+    color: #29495d;
+    background: #fff;
+    border: 1px solid #9ebdcd;
     border-radius: 3px;
+    pointer-events: auto;
     touch-action: manipulation;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  .rsvp input:focus,
+  .rsvp select:focus,
+  .rsvp textarea:focus {
+    outline: 2px solid #6f9db8;
+    outline-offset: 2px;
   }
 
   .rsvp textarea {
@@ -182,10 +210,12 @@
   }
 
   .rsvp .submit {
-    min-height: 52px;
+    position: relative;
+    z-index: 23;
     width: 100%;
     max-width: 360px;
+    min-height: 52px;
     font-size: 10px;
+    pointer-events: auto;
   }
 }
-

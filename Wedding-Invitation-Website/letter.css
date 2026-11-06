@@ -6,3 +6,32 @@
 .letter-action{margin-top:16px}
 @media(max-height:700px){.cover-photo{height:25%;min-height:72px;margin:6px 0}.letter-seal{width:57px;height:57px;font-size:26px;margin-bottom:5px}.letter-action{margin-top:11px}}
 @media(max-height:560px){.cover-photo{height:23%;min-height:52px;margin:4px 0}.letter-seal{width:42px;height:42px;font-size:20px;margin-bottom:3px}.letter-title{font-size:25px}.letter-date{margin-top:6px}.letter-music{margin-top:4px;font-size:6px}.letter-action{margin-top:5px;padding:4px 9px}}
+/* FIX WELCOME OVERLAY */
+.welcome.is-opening {
+  pointer-events: none !important;
+}
+
+.welcome[hidden] {
+  display: none !important;
+}
+
+.letter-cover,
+.letter-cover::before,
+.letter-cover::after {
+  pointer-events: auto;
+}
+
+/* FIX RSVP CLICK */
+#rsvp {
+  position: relative;
+  z-index: 100 !important;
+  pointer-events: auto !important;
+}
+
+#rsvp form,
+#rsvp input,
+#rsvp select,
+#rsvp textarea,
+#rsvp button {
+  pointer-events: auto !important;
+}

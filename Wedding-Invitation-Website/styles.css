@@ -33,3 +33,35 @@
     user-select: text;
     -webkit-user-select: text;
 }
+/* RSVP CLICK FIX */
+
+#welcome[hidden] {
+  display: none !important;
+}
+
+#snowfall,
+.snowfall,
+.snowflake {
+  pointer-events: none !important;
+}
+
+#rsvp {
+  position: relative !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+#rsvp form {
+  position: relative !important;
+  z-index: 100000 !important;
+  pointer-events: auto !important;
+}
+
+#rsvp input,
+#rsvp select,
+#rsvp textarea,
+#rsvp button {
+  position: relative !important;
+  z-index: 100001 !important;
+  pointer-events: auto !important;
+}

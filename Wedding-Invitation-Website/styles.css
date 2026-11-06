@@ -110,3 +110,32 @@
     line-height: 1.08;
   }
 }
+.couple-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.1;
+  font-size: clamp(26px, 4.5vw, 58px);
+  font-weight: 400;
+}
+
+.couple-names span {
+  display: block;
+  white-space: nowrap;
+  font-size: 1em;
+}
+
+.couple-names i {
+  display: block;
+  font-size: 1em;
+  margin: 5px 0;
+  color: #83b4cf;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .couple-names {
+    font-size: clamp(21px, 5.5vw, 34px);
+  }
+}

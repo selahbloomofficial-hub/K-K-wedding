@@ -70,54 +70,10 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  line-height: 1.05;
-}
-
-.couple-names span {
-  display: block;
-}
-
-.couple-names i {
-  display: block;
-  margin: 0;
-}
-/* Couple Names Font Size */
-.couple-names {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  line-height: 1.05;
-  font-size: clamp(38px, 6vw, 76px);
-  font-weight: 400;
-}
-
-.couple-names span {
-  display: block;
-}
-
-.couple-names i {
-  display: block;
-  font-size: 0.8em;
-  margin: 4px 0;
-  color: #83b4cf;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .couple-names {
-    font-size: clamp(32px, 9vw, 48px);
-    line-height: 1.08;
-  }
-}
-.couple-names {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   line-height: 1.1;
   font-size: clamp(26px, 4.5vw, 58px);
   font-weight: 400;
+  width: 100%;
 }
 
 .couple-names span {
@@ -133,9 +89,10 @@
   color: #83b4cf;
 }
 
-/* Mobile */
+/* Mobile screen */
 @media (max-width: 600px) {
   .couple-names {
-    font-size: clamp(21px, 5.5vw, 34px);
+    font-size: clamp(19px, 5.2vw, 30px);
+    width: 100%;
   }
 }

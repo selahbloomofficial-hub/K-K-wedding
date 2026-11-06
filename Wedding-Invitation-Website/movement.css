@@ -1,0 +1,146 @@
+/* Let the couple portrait carry the opening; keep only one compact letter card. */
+.welcome{background:#183e57}
+.welcome:after{display:none}
+.welcome-content{width:min(90vw,500px)}
+.letter-scene{width:min(84vw,450px);height:min(64svh,500px);filter:drop-shadow(0 20px 30px #18384b46)}
+.letter-seal{width:96px;height:96px;font-size:49px;margin:12px 0 8px}
+.cover-photo{width:min(70%,280px);height:27%;max-height:132px;min-height:82px;margin:5px 0 8px}
+.letter-action{margin-top:16px}
+.slide-track{position:absolute;inset:0;z-index:1;display:flex;width:700%;height:100%;transform:translateX(0);transition:transform .72s cubic-bezier(.22,.72,.25,1);will-change:transform}
+.slide-track figure{flex:0 0 14.285714%;width:14.285714%;height:100%;margin:0;display:grid;place-items:center}
+.slide-track img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;filter:drop-shadow(0 8px 22px #1d35452c)}
+.slide-arrow{z-index:3}
+.slide-frame:before{z-index:0}
+.slide-frame{touch-action:pan-y}
+@media(max-height:700px){.letter-scene{height:min(59svh,420px)}.letter-seal{width:78px;height:78px;font-size:41px;margin:7px 0 5px}.cover-photo{height:24%;min-height:65px;margin:3px 0 5px}.letter-action{margin-top:10px}}
+@media(max-height:560px){.letter-scene{height:min(53svh,310px)}.letter-seal{width:58px;height:58px;font-size:31px;margin:3px 0}.cover-photo{height:22%;min-height:48px;margin:2px 0 4px}.letter-title{font-size:25px}.letter-date{margin-top:5px}.letter-music{margin-top:4px;font-size:6px}.letter-action{margin-top:5px;padding:4px 10px}}
+@media(prefers-reduced-motion:reduce){.slide-track{transition:none}}
+
+/* Simple full-photo invitation opening and a continuous, uncropped gallery. */
+.welcome{background:#e9f1f5}
+.welcome:after{display:none}
+.opening-photo:before{filter:blur(18px) brightness(.62)}
+.opening-photo:after{background:linear-gradient(180deg,#0b26321a,#102d3a38)}
+.opening-photo img{object-fit:contain}
+.opening-invite{position:relative;z-index:2;min-height:54px;padding:14px 25px;border:1px solid #ffffffc9;border-radius:2px;background:#f7fbf3d9;color:#244b65;box-shadow:0 8px 30px #142f4233;font:600 11px var(--sans);letter-spacing:.24em;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s,transform .2s}
+.opening-invite:hover{background:#fff;transform:translateY(-2px)}
+.welcome.is-opening{opacity:0;transition:opacity .95s ease .15s}
+.photo-marquee{width:100%;height:min(62vh,560px);min-height:310px;margin:22px auto 0;overflow:hidden;position:relative;isolation:isolate;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.photo-track{display:flex;width:max-content;height:100%;animation:photo-drift 56s linear infinite;will-change:transform}
+.photo-set{height:100%;display:flex;align-items:center;gap:18px;padding-right:18px}
+.photo-set figure{flex:none;width:clamp(220px,28vw,350px);height:100%;margin:0;display:grid;place-items:center;background:linear-gradient(145deg,#eff6f9,#dceaf1);border:1px solid #d2e2e9}
+.photo-set img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;filter:drop-shadow(0 8px 22px #1d35452c)}
+.photo-marquee:hover .photo-track,.photo-marquee:focus-within .photo-track{animation-play-state:paused}
+@keyframes photo-drift{to{transform:translateX(-50%)}}
+@media(max-width:720px){.opening-invite{font-size:10px}.photo-marquee{height:min(58vh,520px);min-height:290px;margin-top:17px}.photo-set{gap:12px;padding-right:12px}.photo-set figure{width:76vw;max-width:310px}.photo-track{animation-duration:48s}}
+@media(prefers-reduced-motion:reduce){.photo-track{animation:none;transform:none;overflow-x:auto}.welcome.is-opening{transition-duration:.01ms}}
+
+/* Bring the essential wedding details forward in the first invitation screen. */
+.event-highlights{width:min(100%,430px);margin:5px 0 22px;padding:6px 18px;background:#ffffffc9;border:1px solid #b7d1df;box-shadow:0 10px 28px #527b9614;text-align:left}
+.event-highlight{display:grid;grid-template-columns:38px 76px 1fr;align-items:center;gap:10px;min-height:57px;padding:7px 0;color:#294b60}
+.event-highlight+.event-highlight{border-top:1px solid #d7e5ec}
+.event-icon{width:31px;height:31px;border:1px solid #a9c9d9;border-radius:50%;display:grid;place-items:center;color:#5d8aa5;font:20px/1 var(--serif)}
+.event-label{font:600 8px var(--sans);letter-spacing:.2em;color:#7393a5}
+.event-highlight strong{font:500 17px/1.15 var(--serif);color:#24485f}
+.event-highlight:last-child strong{font-size:16px}
+@media(max-width:720px){.hero{min-height:0}.event-highlights{margin:2px 0 21px;padding:5px 14px}.event-highlight{grid-template-columns:34px 62px 1fr;gap:8px;min-height:54px}.event-icon{width:28px;height:28px}.event-highlight strong{font-size:16px}.event-highlight:last-child strong{font-size:15px}.hero-copy{padding-bottom:24px}}
+
+/* Elevated winter invitation cover: the button itself remains the only wording. */
+.welcome{background:#dce8ef}
+.opening-photo:before{inset:-28px;filter:blur(22px) brightness(.56) saturate(.78);transform:scale(1.08);animation:opening-glow 24s ease-in-out infinite alternate}
+.opening-photo:after{background:linear-gradient(180deg,#102f451c 0%,#173e5424 42%,#102d454f 100%)}
+.opening-invite{min-height:0;position:relative;padding:25px 37px;border:1px solid #ffffffd9;border-radius:1px;background:linear-gradient(135deg,#ffffffdb,#f1f8fbe8);box-shadow:0 16px 46px #102d4540,inset 0 0 0 5px #ffffff78,inset 0 0 0 6px #a9c9d8a8;color:#315b74;font:500 clamp(23px,4vw,34px)/1 var(--serif);letter-spacing:.13em;text-shadow:0 1px #fff;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);animation:invite-arrive 1.2s cubic-bezier(.2,.75,.25,1) both}
+.opening-invite:before,.opening-invite:after{content:"";position:absolute;left:50%;width:34px;height:1px;background:#8eafc0;transform:translateX(-50%);transition:width .3s ease}
+.opening-invite:before{top:12px}.opening-invite:after{bottom:12px}
+.opening-invite:hover{background:linear-gradient(135deg,#fff,#f5fbfd);transform:translateY(-3px);box-shadow:0 20px 52px #102d454c,inset 0 0 0 5px #ffffff78,inset 0 0 0 6px #a9c9d8a8}
+.opening-invite:hover:before,.opening-invite:hover:after{width:58px}
+.welcome.is-opening .opening-photo img{transform:scale(1.025);transition:transform 1.2s ease}
+@keyframes invite-arrive{from{opacity:0;transform:translateY(12px);letter-spacing:.2em}to{opacity:1;transform:translateY(0);letter-spacing:.13em}}
+@keyframes opening-glow{from{transform:scale(1.08);filter:blur(22px) brightness(.55) saturate(.75)}to{transform:scale(1.13);filter:blur(22px) brightness(.68) saturate(.88)}}
+@media(max-width:720px){.opening-invite{padding:23px 25px;font-size:25px;letter-spacing:.1em}.opening-invite:before{top:10px}.opening-invite:after{bottom:10px}}
+@media(prefers-reduced-motion:reduce){.opening-photo:before,.opening-invite{animation:none}.welcome.is-opening .opening-photo img{transition:none}}
+
+/* Full-screen envelope treatment that leaves the complete portrait visible. */
+.welcome:before{content:"";position:absolute;z-index:2;inset:clamp(12px,2.2vw,28px);border:1px solid #ffffffa8;box-shadow:inset 0 0 0 5px #ffffff18,inset 0 0 0 6px #ffffff70;pointer-events:none;animation:frame-arrive 1.4s ease both}
+.opening-photo:after{background:linear-gradient(180deg,#16384a08 0%,#173d5312 55%,#102d4527 100%),linear-gradient(34deg,transparent 49.82%,#ffffff52 49.94%,#ffffff52 50.06%,transparent 50.18%),linear-gradient(146deg,transparent 49.82%,#ffffff52 49.94%,#ffffff52 50.06%,transparent 50.18%);background-size:auto,100% 48%,100% 48%;background-position:center,center top,center top;background-repeat:no-repeat;pointer-events:none}
+.opening-invite{z-index:3;padding:22px 26px 24px;border:0;border-radius:0;background:transparent;box-shadow:none;color:#fff;font:500 clamp(32px,7vw,60px)/1 var(--serif);letter-spacing:.11em;text-shadow:0 2px 16px #12334dcc,0 1px 2px #17384b;backdrop-filter:none;-webkit-backdrop-filter:none;animation:invite-lettering 1.3s cubic-bezier(.18,.7,.22,1) both}
+.opening-invite:before,.opening-invite:after{width:min(72%,280px);height:1px;background:linear-gradient(90deg,transparent,#ffffffdd 20%,#ffffffdd 80%,transparent);animation:rule-unfold 1.5s .25s ease both}
+.opening-invite:before{top:0}.opening-invite:after{bottom:0}
+.opening-invite:hover{background:transparent;box-shadow:none;transform:translateY(-2px);color:#fff;text-shadow:0 2px 20px #153c54,0 0 28px #ffffffa8}
+.opening-invite:hover:before,.opening-invite:hover:after{width:min(82%,320px)}
+.welcome.is-opening:before{opacity:0;transition:opacity .75s ease}
+@keyframes invite-lettering{0%{opacity:0;transform:translateY(18px);letter-spacing:.22em;filter:blur(5px)}70%{filter:blur(0)}100%{opacity:1;transform:translateY(0);letter-spacing:.11em}}
+@keyframes rule-unfold{from{opacity:0;width:0}to{opacity:1;width:min(72%,280px)}}
+@keyframes frame-arrive{from{opacity:0;inset:clamp(23px,4vw,48px)}to{opacity:1;inset:clamp(12px,2.2vw,28px)}}
+@media(max-width:720px){.opening-invite{font-size:37px;letter-spacing:.08em;padding:20px 12px 22px}.opening-invite:before,.opening-invite:after{width:min(72%,250px)}}
+@media(prefers-reduced-motion:reduce){.welcome:before,.opening-invite,.opening-invite:before,.opening-invite:after{animation:none}}
+
+.countdown{width:min(100%,430px);margin:-6px 0 21px;padding:11px 16px 12px;border-top:1px solid #91b5c8;border-bottom:1px solid #91b5c8;color:#294b60;text-align:center}
+.countdown-heading{margin:0 0 7px!important;color:#6e8fa1!important;font:600 8px/1.2 var(--sans)!important;letter-spacing:.2em!important}
+.countdown-units{display:grid;grid-template-columns:repeat(4,1fr)}
+.countdown-units>div{display:flex;flex-direction:column;align-items:center;line-height:1.1}
+.countdown-units>div+div{border-left:1px solid #c5d8e2}
+.countdown-units strong{font:500 clamp(23px,3vw,31px)/1 var(--serif);font-variant-numeric:tabular-nums;color:#294f67}
+.countdown-units span{margin-top:5px;font:600 7px/1 var(--sans);letter-spacing:.13em;color:#7b98a8}
+@media(max-width:720px){.countdown{margin:0 0 19px;padding:10px 12px}.countdown-units strong{font-size:25px}.countdown-units span{font-size:6px}}
+
+.countdown-section{position:relative;isolation:isolate;overflow:hidden;padding:75px 20px 82px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#fff 0%,#f3f9fc 48%,#e6f2f8 100%);border-top:1px solid #d6e6ee;border-bottom:1px solid #d6e6ee}
+.countdown-section:before,.countdown-section:after{content:"✧";position:absolute;z-index:-1;color:#a8c8d8;font:clamp(80px,15vw,190px)/1 var(--serif);opacity:.22;pointer-events:none}
+.countdown-section:before{left:4%;top:25%;transform:rotate(-16deg)}.countdown-section:after{right:4%;bottom:14%;transform:rotate(16deg)}
+.countdown-section>.eyebrow{margin:0 0 8px;color:#7898a9}
+.countdown-title{margin:0 0 28px;color:#31566d;font:italic 500 clamp(42px,7vw,72px)/1 var(--serif)}
+.countdown-section .countdown{width:min(100%,900px);margin:0 auto;padding:23px 14px 25px;border:1px solid #b8d0dd;background:#ffffffa8;box-shadow:0 16px 42px #3f6b8112}
+.countdown-section .countdown-heading{margin:0 0 14px!important;font-size:9px!important;letter-spacing:.27em!important}
+.countdown-section .countdown-units{grid-template-columns:repeat(4,minmax(0,1fr))}
+.countdown-section .countdown-units>div{min-height:112px;justify-content:center}
+.countdown-section .countdown-units>div+div{border-left:1px solid #c9dce6}
+.countdown-section .countdown-units strong{font:italic 500 clamp(48px,8.5vw,88px)/.94 var(--serif);letter-spacing:-.04em;color:#315b75}
+.countdown-section .countdown-units span{margin-top:13px;font-size:9px;letter-spacing:.22em;color:#7895a5}
+@media(max-width:720px){.countdown-section{padding:58px 17px 62px}.countdown-title{margin-bottom:22px;font-size:48px}.countdown-section .countdown{padding:17px 5px 18px}.countdown-section .countdown-heading{font-size:7px!important;letter-spacing:.18em!important}.countdown-section .countdown-units>div{min-height:88px}.countdown-section .countdown-units strong{font-size:clamp(40px,12vw,62px)}.countdown-section .countdown-units span{margin-top:10px;font-size:7px;letter-spacing:.12em}}
+
+/* Full-screen embossed lace envelope inspired by the supplied reference. */
+.welcome{background:#f8f6f2;perspective:1400px}
+.welcome:before{display:none}
+.opening-photo{background:#f8f6f2}
+.opening-photo:before,.opening-photo:after{display:none}
+.opening-photo img{opacity:0;object-fit:contain}
+.envelope-shell{position:absolute;z-index:2;inset:10px;overflow:hidden;border:1px solid #ebe5dd;border-radius:24px;background:linear-gradient(145deg,#fbf9f5,#f3f0ea 55%,#faf8f4);box-shadow:0 18px 55px #65584c24,inset 0 0 0 7px #ffffff9c,inset 0 0 0 8px #e5ded4;transform-style:preserve-3d}
+.envelope-emboss{position:absolute;inset:0;opacity:.7;background:radial-gradient(ellipse at 50% 34%,#fff0 0 18%,#c9c1b51a 19% 20%,#fff0 21%),radial-gradient(ellipse at 28% 29%,#fff 0 7%,#c9c1b50c 8% 9%,#fff0 10%),radial-gradient(ellipse at 72% 29%,#fff 0 7%,#c9c1b50c 8% 9%,#fff0 10%),radial-gradient(ellipse at 28% 38%,#fff 0 7%,#c9c1b50c 8% 9%,#fff0 10%),radial-gradient(ellipse at 72% 38%,#fff 0 7%,#c9c1b50c 8% 9%,#fff0 10%),radial-gradient(ellipse at 50% 50%,#ded8cf18 0 1px,#fff0 2px);background-size:100% 100%,110px 115px,110px 115px,110px 115px,110px 115px,17px 17px;pointer-events:none}
+.envelope-fold{position:absolute;inset:0;pointer-events:none}
+.envelope-fold-bottom{z-index:1;background:linear-gradient(150deg,#fff9,#eae4dc62);clip-path:polygon(0 100%,100% 100%,50% 52%);filter:drop-shadow(0 -2px 2px #d3cabe40)}
+.envelope-fold-left{z-index:2;background:linear-gradient(115deg,#fff9,#ece7df55);clip-path:polygon(0 0,50% 52%,0 100%)}
+.envelope-fold-right{z-index:2;background:linear-gradient(245deg,#fff9,#e9e3da55);clip-path:polygon(100% 0,50% 52%,100% 100%)}
+.envelope-flap{position:absolute;z-index:3;inset:0 0 auto;height:56%;background:linear-gradient(165deg,#fffefa,#f5f2ed 64%,#ede8e0);clip-path:polygon(0 0,100% 0,50% 100%);filter:drop-shadow(0 5px 7px #8b7d6b20);transform-origin:50% 0;transition:transform .9s cubic-bezier(.3,.7,.2,1),opacity .55s ease;backface-visibility:hidden}
+.envelope-monogram{position:absolute;z-index:4;top:clamp(95px,21vh,210px);left:50%;transform:translateX(-50%);color:#c3bdaf;font:500 clamp(49px,10vw,86px)/1 var(--serif);letter-spacing:.04em;text-shadow:1px 1px 0 #fff, -1px -1px 0 #aaa29542;white-space:nowrap}
+.envelope-monogram i{font-size:.63em;font-weight:400;color:#a9bfd0}
+.opening-invite{position:absolute;z-index:5;top:52%;left:50%;transform:translate(-50%,-50%);width:clamp(112px,17vw,150px);height:clamp(112px,17vw,150px);padding:16px;border:2px solid #b6c9d5;border-radius:48% 52% 50% 47%;display:grid;place-content:center;background:radial-gradient(circle at 35% 28%,#9fc2d4,#668ca6 54%,#476c84 100%);box-shadow:0 5px 10px #344c5d46,inset 0 0 0 4px #ffffff29,inset 0 0 0 6px #3f617a55;color:#fff;font:500 clamp(14px,2.4vw,19px)/1.05 var(--serif);letter-spacing:.09em;text-align:center;text-shadow:0 1px 3px #294b6085;cursor:pointer;animation:seal-arrive 1.4s .25s cubic-bezier(.2,.7,.25,1) both;transition:filter .2s,box-shadow .2s}
+.opening-invite:before,.opening-invite:after{display:none}
+.opening-invite:hover{transform:translate(-50%,-50%) scale(1.06);background:radial-gradient(circle at 35% 28%,#a9cadb,#7197b0 54%,#4d738c 100%);box-shadow:0 8px 18px #344c5d55,inset 0 0 0 4px #ffffff36,inset 0 0 0 6px #3f617a55}
+.welcome.is-opening .envelope-flap{transform:rotateX(176deg);opacity:.18}
+.welcome.is-opening .envelope-fold{opacity:0;transition:opacity .65s ease .12s}
+.welcome.is-opening .envelope-shell{transform:scale(1.025);transition:transform .95s ease}
+.welcome.is-opening .opening-photo img{opacity:1;transition:opacity .9s ease .15s}
+@keyframes seal-arrive{from{opacity:0;transform:translate(-50%,calc(-50% + 14px)) scale(.82)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@media(max-width:720px){.envelope-shell{inset:9px;border-radius:19px}.envelope-monogram{top:23vh}.opening-invite{top:53%;width:118px;height:118px;font-size:16px}}
+@media(prefers-reduced-motion:reduce){.opening-invite{animation:none}.welcome.is-opening .envelope-flap,.welcome.is-opening .envelope-shell,.welcome.is-opening .envelope-fold,.welcome.is-opening .opening-photo img{transition:none}}
+
+/* Fresh lace envelope variation with sky-blue satin ribbon. */
+.envelope-shell{border-color:#e5e4df;background:linear-gradient(145deg,#fffefa,#f8f7f3 52%,#fffefa);box-shadow:0 20px 60px #43536324,inset 0 0 0 7px #fff,inset 0 0 0 8px #d9e1e5}
+.envelope-emboss{opacity:.48;background:radial-gradient(ellipse at 50% 35%,#fff 0 5%,#d8d8d1 6% 7%,transparent 8%),radial-gradient(ellipse at 39% 35%,#fff 0 4%,#d8d8d1 5% 6%,transparent 7%),radial-gradient(ellipse at 61% 35%,#fff 0 4%,#d8d8d1 5% 6%,transparent 7%),radial-gradient(ellipse at 50% 26%,#fff 0 4%,#d8d8d1 5% 6%,transparent 7%),radial-gradient(ellipse at 50% 44%,#fff 0 4%,#d8d8d1 5% 6%,transparent 7%);background-size:130px 150px;background-position:0 0,0 0,0 0,0 0,0 0}
+.envelope-lace{position:absolute;z-index:4;inset:17px;border:1px solid #cbd9e0;border-radius:15px;outline:1px solid #fff;outline-offset:3px;pointer-events:none;background:radial-gradient(circle,#fff 0 3px,transparent 3.6px) top left/22px 11px repeat-x,radial-gradient(circle,#fff 0 3px,transparent 3.6px) bottom left/22px 11px repeat-x,radial-gradient(circle,#fff 0 3px,transparent 3.6px) top left/11px 22px repeat-y,radial-gradient(circle,#fff 0 3px,transparent 3.6px) top right/11px 22px repeat-y;box-shadow:inset 0 0 0 5px #ffffffb8,inset 0 0 0 6px #d6e0e4}
+.envelope-ribbon{position:absolute;z-index:5;pointer-events:none;filter:drop-shadow(0 2px 3px #506f8328)}
+.envelope-ribbon-horizontal{left:0;right:0;top:51.5%;height:clamp(25px,5vh,48px);background:linear-gradient(180deg,#d7e9f2 0%,#9fc2d7 22%,#c4dce9 48%,#91b8ce 74%,#d8e9f1 100%);border-top:1px solid #ffffffb8;border-bottom:1px solid #7199b0a8;animation:silk-glint 7s ease-in-out infinite}
+.envelope-ribbon-vertical{top:0;bottom:0;left:50%;width:clamp(30px,5vw,54px);transform:translateX(-50%);background:linear-gradient(90deg,#d3e7f0 0%,#9bbdd1 24%,#c8e0eb 52%,#91b7cc 78%,#d7e8f0 100%);border-left:1px solid #ffffffb8;border-right:1px solid #7199b0a8}
+.envelope-monogram{z-index:6;color:#b9b5ac;text-shadow:1px 1px 0 #fff,-1px -1px 0 #9c978c42}
+.opening-invite{z-index:7;border:2px solid #d4e3eb;background:radial-gradient(circle at 34% 25%,#8db6cd,#5c84a0 56%,#3f6781 100%);box-shadow:0 5px 10px #344c5d46,inset 0 0 0 4px #ffffff35,inset 0 0 0 7px #2d526e63,inset 0 3px 8px #ffffff4a}
+.envelope-ribbon-horizontal:after{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:#ffffff85}
+.envelope-ribbon-vertical:after{content:"";position:absolute;top:51.5%;left:0;right:0;height:1px;background:#ffffff85}
+.welcome.is-opening .envelope-ribbon,.welcome.is-opening .envelope-lace{opacity:0;transition:opacity .45s ease}
+@keyframes silk-glint{0%,100%{background-position:0 0}50%{background-position:0 10px}}
+@media(max-width:720px){.envelope-lace{inset:13px;border-radius:12px}.envelope-ribbon-horizontal{height:30px}.envelope-ribbon-vertical{width:34px}}
+@media(prefers-reduced-motion:reduce){.envelope-ribbon-horizontal{animation:none}}
+
+/* Closed envelope finish: remove the wrap and align the seal with the flap tip. */
+.envelope-ribbon{display:none}
+.opening-invite{top:56%;}
+@media(max-width:720px){.opening-invite{top:56%}}

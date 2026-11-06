@@ -1,0 +1,32 @@
+.opening-photo{position:absolute;inset:0;background:#122d42 url("assets/opening-couple.jpg") center/cover no-repeat;overflow:hidden}
+.opening-photo:before{content:"";position:absolute;inset:-18px;background:url("assets/opening-couple.jpg") center/cover no-repeat;filter:blur(15px) brightness(.68);transform:scale(1.04)}
+.opening-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#09253b12,#0e30462b 58%,#0d2a3e4f)}
+.opening-photo img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.welcome-content{z-index:2}
+.letter-inside,.letter-cover{background:linear-gradient(145deg,#ffffffd9,#fdfefed1 54%,#edf5f9d6);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.letter-cover{box-shadow:inset 0 0 0 8px #ffffffd9,inset 0 0 0 9px #b9cfdb,inset 0 0 0 14px #f6fafccc}
+.slide-frame{position:relative;width:min(100%,850px);height:min(64vh,590px);min-height:310px;margin:22px auto 0;overflow:hidden;display:grid;place-items:center;background:#dbe8ef;isolation:isolate}
+.slide-frame:before{content:"";position:absolute;inset:-16px;background-image:linear-gradient(#253e4b25,#253e4b25),var(--slide-photo);background-size:cover;background-position:center;filter:blur(15px);opacity:.62;z-index:-1;transform:scale(1.04)}
+.slide-frame>img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;transition:opacity .28s ease;filter:drop-shadow(0 8px 22px #1d35452c)}
+.slide-frame>img.changing{opacity:.2}
+.slide-arrow{position:absolute;top:50%;z-index:2;transform:translateY(-50%);width:42px;height:42px;border:1px solid #ffffffba;border-radius:50%;background:#f7fbf3d9;color:#345970;box-shadow:0 3px 12px #213b4b24;font:400 27px/1 var(--serif);cursor:pointer}
+.slide-arrow:hover{background:#fff}.slide-arrow.previous{left:14px}.slide-arrow.next{right:14px}
+.slide-footer{width:min(100%,850px);margin:14px auto 0;display:flex;align-items:center;justify-content:space-between;color:#718b9b;font-size:9px;letter-spacing:.14em}
+.slide-dots{display:flex;gap:8px;align-items:center}.slide-dot{width:7px;height:7px;padding:0;border:1px solid #789cb0;border-radius:50%;background:transparent;cursor:pointer}.slide-dot[aria-current="true"]{background:#527c95;transform:scale(1.25)}
+@media(max-width:720px){.opening-photo img{object-fit:contain;object-position:center}.slide-frame{width:100%;height:min(68vh,600px);min-height:300px;aspect-ratio:3/4}.slide-arrow{width:38px;height:38px}.slide-arrow.previous{left:8px}.slide-arrow.next{right:8px}.slide-footer{padding:0 4px}}
+@media(prefers-reduced-motion:reduce){.slide-frame>img{transition:none}}
+.welcome{background:repeating-linear-gradient(0deg,#f8fbfd 0,#f8fbfd 27px,#f0f6fa 28px,#f8fbfd 29px),linear-gradient(135deg,#fff,#eaf3f8)}
+.welcome:after{content:"";position:absolute;inset:14px;border:1px solid #c6d9e3;box-shadow:inset 0 0 0 5px #ffffffb8,inset 0 0 0 6px #d9e6ec;pointer-events:none}
+.welcome-content{width:min(96vw,660px)}
+.cover-kicker{color:#6d8da1}
+.letter-scene{width:min(92vw,590px);height:min(78svh,660px);filter:drop-shadow(0 18px 26px #35586d26)}
+.letter-cover{background:linear-gradient(145deg,#fff,#f9fcfe 52%,#eaf3f8);backdrop-filter:none;-webkit-backdrop-filter:none}
+.letter-seal{width:112px;height:112px;margin:20px 0 14px;font-size:56px;color:#315f7a}
+.cover-photo{width:min(74%,310px);height:29%;max-height:160px;min-height:94px;margin:8px 0 12px}
+.letter-title{font-size:clamp(34px,7vw,48px)}
+.letter-action{margin-top:24px}
+.view-photos{display:inline-flex;align-items:center;gap:18px;margin:23px auto 0;padding:12px 19px;border:1px solid #a5c1d1;color:#456e87;background:#f9fcfe;text-decoration:none;font:600 8px var(--sans);letter-spacing:.18em;transition:background .2s,transform .2s}
+.view-photos:hover{background:#eaf4f9;transform:translateY(-2px)}
+.view-photos span{font-size:13px;color:#80a7bd}
+@media(max-height:700px){.letter-scene{height:min(72svh,530px)}.letter-seal{width:90px;height:90px;font-size:47px;margin:10px 0 8px}.cover-photo{height:26%;min-height:75px;margin:5px 0 7px}.letter-action{margin-top:14px}}
+@media(max-height:560px){.letter-scene{height:min(66svh,420px)}.letter-seal{width:72px;height:72px;font-size:39px;margin:5px 0}.cover-photo{height:24%;min-height:58px;margin:3px 0 5px}.letter-title{font-size:28px}.letter-date{margin-top:7px}.letter-music{margin-top:5px;font-size:6px}.letter-action{margin-top:8px;padding:5px 12px}}
